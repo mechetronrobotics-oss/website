@@ -377,20 +377,20 @@ export const navLinks: { href: string; label: string; children?: { href: string;
   { href: "/courses", label: "S.T.E.M Courses" },
   { href: "/summer-camp", label: "Workshop & Campus" },
   { href: "/verify-certificate", label: "Verify Certificate" },
-  {
-    href: "/engineer-services",
-    label: "Engineer Services",
-    children: [
-      { href: "/engineer-services/mechanical-cad", label: "Mechanical CAD" },
-      { href: "/engineer-services/civil-cad", label: "Civil CAD" },
-      { href: "/engineer-services/architectural-cad", label: "Architectural CAD" },
-      { href: "/engineer-services/interior-design", label: "Interior Design" },
-      { href: "/engineer-services/electrical-cad", label: "Electrical CAD (ETAP)" },
-      { href: "/engineer-services/3d-printing", label: "3D Printing" },
-      { href: "/engineer-services/blow-mould", label: "Top 5 Expert Blow Mould Manufacturing" },
-      { href: "/engineer-services/injection-mould", label: "Injection Mould Manufacturing" },
-    ]
-  },
+  // {
+  //   href: "/engineer-services",
+  //   label: "Engineer Services",
+  //   children: [
+  //     { href: "/engineer-services/mechanical-cad", label: "Mechanical CAD" },
+  //     { href: "/engineer-services/civil-cad", label: "Civil CAD" },
+  //     { href: "/engineer-services/architectural-cad", label: "Architectural CAD" },
+  //     { href: "/engineer-services/interior-design", label: "Interior Design" },
+  //     { href: "/engineer-services/electrical-cad", label: "Electrical CAD (ETAP)" },
+  //     { href: "/engineer-services/3d-printing", label: "3D Printing" },
+  //     { href: "/engineer-services/blow-mould", label: "Top 5 Expert Blow Mould Manufacturing" },
+  //     { href: "/engineer-services/injection-mould", label: "Injection Mould Manufacturing" },
+  //   ]
+  // },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
 ];

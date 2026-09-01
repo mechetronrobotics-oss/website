@@ -20,7 +20,7 @@ export default function ContactPage() {
         <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] rounded-full bg-brand-blue/10 blur-[130px] pointer-events-none" />
 
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          
+
           {/* Left: Content Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Breadcrumb */}
@@ -70,26 +70,14 @@ export default function ContactPage() {
           {/* Right: Building Image with AICRA card */}
           <div className="lg:col-span-5 relative w-full aspect-[4/3] rounded-2xl overflow-visible border-4 border-[#10B981]/20 shadow-xl">
             <Image
-              src="/about/contactus.jpg"
+              src="/images/Picture1.png"
               alt="MET Mech-E-Tron office building and student team"
               fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 100vw, 90vw"
               priority
               className="object-cover rounded-xl"
             />
             <div className="absolute inset-0 bg-[#050b14]/15 rounded-xl" />
-
-            {/* AICRA floating badge */}
-            <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 bg-[#0c1424]/95 border border-white/10 p-5 rounded-2xl shadow-2xl flex flex-col items-center min-w-[150px] z-20 backdrop-blur-md text-center">
-              <span className="text-[10px] text-white/50 font-bold uppercase tracking-wider">DC for</span>
-              <span className="text-sm text-white font-extrabold mt-1 leading-none">AICRA</span>
-              <span className="text-[9px] text-[#FFB400] font-bold mt-2 uppercase tracking-wide">Official</span>
-              <span className="text-[11px] text-[#10B981] font-black uppercase tracking-wider">District Coordinator</span>
-              <span className="text-[10px] text-white/40 font-semibold mt-1">Chennai District</span>
-              <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-xs mt-3 text-[#FFB400] bg-white/5">
-                🏆
-              </div>
-            </div>
           </div>
 
         </div>
@@ -98,7 +86,7 @@ export default function ContactPage() {
       {/* ── 2. QUICK CONTACT INFO ROW ── */}
       <section className="relative z-20 max-w-[1440px] mx-auto px-5 lg:px-10 -mt-8">
         <div className="bg-white rounded-[24px] p-6 md:p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)] border border-slate-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          
+
           {/* Card 1: Visit Our Office */}
           <a
             href="https://maps.app.goo.gl/H7j3X96qn97SKQzS6"
@@ -171,7 +159,7 @@ export default function ContactPage() {
       {/* ── 3. MAP & FORM SECTION ── */}
       <Section className="bg-white py-16 lg:py-24">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          
+
           {/* Left Column: Form */}
           <div id="contact-form" className="bg-[#f8fafc] border border-slate-100 p-8 lg:p-10 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
             <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-slate-800 mb-2">Send Us a Message</h3>
@@ -183,7 +171,7 @@ export default function ContactPage() {
           <div className="space-y-8">
             <div className="bg-[#f8fafc] border border-slate-100 p-6 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.02)] space-y-6">
               <h3 className="text-xl font-display font-extrabold text-slate-800">Find Us Here</h3>
-              
+
               <div className="rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm h-[320px] w-full relative">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.6698656158223!2d80.0005925!3d12.730718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52fb15e6dbe451%3A0x2e2c0fcecbf6d6e6!2sMech-E-Tron!5e0!3m2!1sen!2sin!4v1717888800000!5m2!1sen!2sin"
@@ -243,7 +231,7 @@ export default function ContactPage() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
-            
+
             {/* WhatsApp */}
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.02)] hover:shadow-[0_20px_40px_rgba(15,23,42,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between items-center text-center">
               <div className="w-12 h-12 rounded-full bg-green-50 text-green-500 flex items-center justify-center text-2xl mb-4 border border-green-100">
@@ -340,9 +328,9 @@ export default function ContactPage() {
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10">
           <div className="bg-[#050b14] rounded-[24px] overflow-hidden shadow-2xl border border-white/5 relative">
             <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 md:p-12 relative z-10">
-              
+
               {/* Left Student Image */}
               <div className="lg:col-span-3 relative aspect-[4/3] lg:aspect-square w-full rounded-xl overflow-hidden border border-white/5">
                 <Image

@@ -88,26 +88,14 @@ export default function AboutPage() {
           {/* Right: Classroom Image with AICRA card */}
           <div className="lg:col-span-5 relative w-full aspect-[4/3] rounded-2xl overflow-visible border-4 border-[#10B981]/20 shadow-xl">
             <Image
-              src="/images/workshops-hero.png"
+              src="/images/Picture1.png"
               alt="Students in robotics classroom environment"
               fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 100vw, 120vw"
               priority
               className="object-cover rounded-xl"
             />
             <div className="absolute inset-0 bg-[#050b14]/10 rounded-xl" />
-
-            {/* AICRA floating badge */}
-            <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 bg-[#0c1424]/95 border border-white/10 p-5 rounded-2xl shadow-2xl flex flex-col items-center min-w-[150px] z-20 backdrop-blur-md text-center">
-              <span className="text-[10px] text-white/50 font-bold uppercase tracking-wider">DC for</span>
-              <span className="text-sm text-white font-extrabold mt-1 leading-none">AICRA</span>
-              <span className="text-[9px] text-[#FFB400] font-bold mt-2 uppercase tracking-wide">Official</span>
-              <span className="text-[11px] text-[#10B981] font-black uppercase tracking-wider">District Coordinator</span>
-              <span className="text-[10px] text-white/40 font-semibold mt-1">Chennai District</span>
-              <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-xs mt-3 text-[#FFB400] bg-white/5">
-                🏆
-              </div>
-            </div>
           </div>
 
         </div>
@@ -436,7 +424,7 @@ export default function AboutPage() {
                 <p>
                   Through Mech-E-Tron, his mission is to bridge the gap between education and real-world engineering, empowering students to become confident builders, problem-solvers, innovators and future technology leaders.
                 </p>
-                
+
                 <div className="pt-2">
                   <p className="font-semibold text-[#0F172A] mb-1">His belief is simple:</p>
                   <p className="text-[#FFB400] font-display font-extrabold text-lg md:text-xl uppercase tracking-wide">
