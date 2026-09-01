@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface GalleryImage {
@@ -69,70 +69,107 @@ const GALLERY_IMAGES: GalleryImage[] = [
     src: "/images/mechetron_gallary/WhatsApp Image 2026-08-16 at 4.34.56 PM (1).jpeg",
     title: "Group Project Debugging",
     description: "Mentors guiding a small group of students on circuit connections and logical programming."
-  },
-  {
-    src: "/images/mechetron_gallary/WhatsApp Image 2026-08-16 at 4.34.56 PM (2).jpeg",
-    title: "Sensor Integration Lab",
-    description: "Interfacing multi-sensor modules with Arduino for sophisticated hardware feedback."
-  },
-  {
-    src: "/images/mechetron_gallary/WhatsApp Image 2026-08-16 at 4.34.56 PM.jpeg",
-    title: "Proud Innovators Show",
-    description: "Students proudly displaying their completed project prototypes during the final showcase."
   }
 ];
 
-export default function AboutGallery() {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+const SECTIONS = [
+  {
+    title: "SCHOOL STEM WORKSHOP",
+    subtitle: "Today’s Learners. Tomorrow’s Innovators.",
+    content: (
+      <>
+        <p className="mb-4">
+          At Mech-E-Tron Robotics Lab, students don&apos;t just watch technology —
+          they experience it, experiment with it, and create with it.
+        </p>
+        <p className="mb-4">
+          From their first robot to their first breakthrough,
+          every challenge builds confidence, creativity, technical thinking, and the courage to innovate.
+        </p>
+        <p>
+          We are not just teaching robotics. We are building the minds that will build tomorrow.
+        </p>
+      </>
+    ),
+    images: GALLERY_IMAGES.slice(0, 4),
+  },
+  {
+    title: "A Summer That Builds More Than Robots",
+    subtitle: "",
+    content: (
+      <>
+        <p className="mb-4 italic text-gray-700">
+          “We don&apos;t want students to spend their summer only learning about technology. We want them to experience it, experiment with it, and create something of their own.”
+        </p>
+        <p>
+          At Mech-E-Tron, the classroom becomes a laboratory, the student becomes an engineer, and every project becomes an opportunity to innovate.
+        </p>
+      </>
+    ),
+    images: GALLERY_IMAGES.slice(4, 8),
+  },
+  {
+    title: "School Robotics Lab Sessions",
+    subtitle: "From Classroom Learning to Real-World Creation",
+    content: (
+      <>
+        <p className="mb-4 font-semibold text-gray-800">
+          At Mech-E-Tron, our school lab sessions bring STEM education to life through hands-on robotics and electronics learning.
+        </p>
+        <p>
+          Students work in teams to assemble circuits, build robotic systems, write and test programs, troubleshoot challenges, and bring their ideas to life. Guided by experienced instructors, every session encourages students to think independently, collaborate confidently, and learn through experimentation.
+        </p>
+      </>
+    ),
+    images: GALLERY_IMAGES.slice(8, 12),
+  }
+];
 
-  // Handlers for navigating lightbox
-  const showPrev = useCallback(() => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => {
-      if (prev === null) return null;
-      return prev === 0 ? GALLERY_IMAGES.length - 1 : prev - 1;
-    });
-  }, [lightboxIndex]);
+const ImageCarousel = ({ images }: { images: GalleryImage[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const showNext = useCallback(() => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => {
-      if (prev === null) return null;
-      return prev === GALLERY_IMAGES.length - 1 ? 0 : prev + 1;
-    });
-  }, [lightboxIndex]);
-
-  const closeLightbox = useCallback(() => {
-    setLightboxIndex(null);
-  }, []);
-
-  // Keyboard controls
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") showPrev();
-      if (e.key === "ArrowRight") showNext();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, showPrev, showNext, closeLightbox]);
-
-  // Lock scroll when lightbox is open
-  useEffect(() => {
-    if (lightboxIndex !== null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [lightboxIndex]);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   return (
-    <section id="gallery-section" className="bg-[#0F1724] py-20 text-white relative overflow-hidden">
+    <div className="relative w-full aspect-[4/3] overflow-hidden border border-gray-300">
+      {images.map((img, idx) => (
+        <div
+          key={idx}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          <Image
+            src={img.src}
+            alt={img.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+      ))}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+        {images.map((_, idx) => (
+          <div
+            key={idx}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              idx === currentIndex ? "bg-white scale-125 shadow-md" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default function AboutGallery() {
+  return (
+    <section id="gallery-section" className="bg-[#0F1724] py-20 relative overflow-hidden">
       {/* Visual background details */}
       <div className="absolute inset-0 bg-grid-lines opacity-10 pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[#0355BC]/10 blur-[130px] pointer-events-none" />
@@ -152,123 +189,40 @@ export default function AboutGallery() {
           </p>
         </div>
 
-        {/* Grid Display — all images in one place, no filters */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {GALLERY_IMAGES.map((img, index) => (
-            <div
-              key={img.src}
-              onClick={() => setLightboxIndex(index)}
-              className="group relative rounded-2xl overflow-hidden border border-white/5 bg-[#172234] shadow-[0_4px_25px_rgba(0,0,0,0.25)] hover:border-[#1DA5FA]/50 hover:shadow-glow-sm transition-all duration-500 cursor-pointer flex flex-col h-[340px] animate-fade-in"
-            >
-              {/* Image Frame */}
-              <div className="relative w-full h-[220px] overflow-hidden bg-slate-900 flex-shrink-0">
-                <Image
-                  src={img.src}
-                  alt={img.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1724]/90 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-300" />
-              </div>
-
-              {/* Text Area */}
-              <div className="p-5 flex flex-col flex-grow justify-between bg-[#172234]">
-                <div>
-                  <h3 className="font-display font-extrabold text-white text-base leading-snug group-hover:text-[#1DA5FA] transition-colors duration-300">
-                    {img.title}
+        {/* Main white container similar to the user's screenshot */}
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl mx-auto">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {SECTIONS.map((section, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center">
+                {/* Carousel */}
+                <div className="w-full mb-8">
+                  <ImageCarousel images={section.images} />
+                </div>
+                
+                {/* Text Content */}
+                <div className="flex flex-col items-center px-2">
+                  <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-3 uppercase tracking-wide">
+                    {section.title}
                   </h3>
-                  <p className="text-white/50 text-[11px] leading-relaxed mt-1.5 line-clamp-2">
-                    {img.description}
-                  </p>
-                </div>
-                <div className="flex items-center text-[10px] font-bold text-[#1DA5FA] mt-2 group-hover:translate-x-1 transition-transform duration-300">
-                  <span>View Larger</span>
-                  <span className="ml-1">→</span>
+                  
+                  {section.subtitle && (
+                    <h4 className="text-sm md:text-base font-semibold text-gray-600 mb-4">
+                      {section.subtitle}
+                    </h4>
+                  )}
+                  
+                  <div className="text-sm text-gray-600 leading-relaxed max-w-sm">
+                    {section.content}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
         </div>
       </div>
-
-      {/* IMMERSIVE LIGHTBOX OVERLAY */}
-      {lightboxIndex !== null && (
-        <div
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-fade-in"
-          onClick={closeLightbox}
-        >
-          {/* Close button */}
-          <button
-            className="absolute top-5 right-5 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full backdrop-blur-md transition-all duration-200 z-[10000]"
-            onClick={closeLightbox}
-            aria-label="Close Lightbox"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-
-          {/* Navigation - Prev */}
-          <button
-            className="absolute left-4 md:left-8 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-md transition-all duration-200 z-[10000]"
-            onClick={(e) => {
-              e.stopPropagation();
-              showPrev();
-            }}
-            aria-label="Previous Image"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          {/* Image Canvas Container */}
-          <div
-            className="relative w-full max-w-[1000px] h-[60vh] md:h-[70vh] flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={GALLERY_IMAGES[lightboxIndex].src}
-              alt={GALLERY_IMAGES[lightboxIndex].title}
-              fill
-              className="object-contain rounded-lg animate-scale-up"
-              sizes="100vw"
-              priority
-            />
-          </div>
-
-          {/* Navigation - Next */}
-          <button
-            className="absolute right-4 md:right-8 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-md transition-all duration-200 z-[10000]"
-            onClick={(e) => {
-              e.stopPropagation();
-              showNext();
-            }}
-            aria-label="Next Image"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          {/* Info Card Footer */}
-          <div
-            className="w-full max-w-[650px] bg-white/10 border border-white/10 backdrop-blur-md rounded-2xl p-6 text-center mt-6 z-[10000]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h4 className="text-xl font-display font-black text-white leading-tight">
-              {GALLERY_IMAGES[lightboxIndex].title}
-            </h4>
-            <p className="text-white/70 text-sm mt-2 max-w-xl mx-auto leading-relaxed">
-              {GALLERY_IMAGES[lightboxIndex].description}
-            </p>
-            <div className="text-[11px] text-white/40 mt-4 font-bold tracking-wider">
-              IMAGE {lightboxIndex + 1} OF {GALLERY_IMAGES.length}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
+

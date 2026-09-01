@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] rounded-full bg-brand-blue/10 blur-[130px] pointer-events-none" />
 
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          
+
           {/* Left: Content Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Breadcrumb */}
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
             {/* Subheading */}
             <p className="mt-4 text-base sm:text-lg text-white/70 leading-relaxed font-medium max-w-xl">
-              Inspiring Young Minds, Building Innovation.<br/>
+              Inspiring Young Minds, Building Innovation.<br />
               Creating a better tomorrow through Robotics, AI, and Practical STEM Education.
             </p>
 
@@ -201,7 +201,7 @@ export default function AboutPage() {
       {/* ── 3. Mission & Vision Section (3 columns, robot centered focus, equal height) ── */}
       <section className="bg-white py-20">
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-12 items-stretch">
-          
+
           {/* Mission Card */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left bg-[#f8fafc] p-8 rounded-2xl border border-slate-100 shadow-[0_8px_24px_rgba(0,0,0,0.02)] flex-1 justify-center">
             <div className="w-14 h-14 rounded-full bg-[#D1FAE5] flex items-center justify-center mb-6">
@@ -254,70 +254,53 @@ export default function AboutPage() {
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10">
           <div className="bg-[#050b14] rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden shadow-xl">
             <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              
-              {/* Left Column (Heading + Desc) */}
-              <div className="lg:col-span-7">
-                <span className="text-[#FFB400] text-xs font-bold uppercase tracking-wider mb-2 block">We are Proud to be</span>
-                <h2 className="text-3xl md:text-[40px] font-extrabold text-white leading-tight mb-4">
-                  District Coordinator (DC) for <span className="text-[#10B981]">AICRA</span>
+
+            <div className="flex flex-col lg:flex-row gap-10 items-center relative z-10">
+              {/* Left Column (Image) */}
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <img src="logos/aicra.webp" alt="AICRA District Coordinator" className="w-full max-w-[350px] h-auto object-contain drop-shadow-2xl" />
+              </div>
+
+              {/* Right Column (Text & Grid) */}
+              <div className="w-full lg:w-2/3 flex flex-col items-start text-left">
+                <span className="text-[#FFB400] text-sm font-bold uppercase tracking-wider mb-2 block">
+                  WE ARE PROUD TO BE
+                </span>
+                <h2 className="text-2xl md:text-3xl lg:text-[32px] font-extrabold text-white leading-tight mb-4">
+                  District Coordinator (DC) for AICRA <span className="text-[#FFB400]">[ ID : DCTG2028 ]</span>
                 </h2>
-                <p className="text-white/60 text-sm md:text-base leading-relaxed">
-                  MechEtron is the Official District Coordinator for AICRA (All India Council for Robotics & Automation), working towards the advancement of robotics education, innovation, and research in schools and communities across Chennai District.
+                <p className="text-white/80 text-sm md:text-base leading-relaxed mb-8 max-w-3xl">
+                  MechEtron is the Official District Coordinator for AICRA (All India Council for Robotics & Automation),
+                  working towards the advancement of robotics education, innovation, and research in schools and communities
+                  across INDIA.
                 </p>
-              </div>
 
-              {/* Vertical Divider */}
-              <div className="hidden lg:block lg:col-span-1 justify-self-center">
-                <div className="w-px h-32 bg-white/10" />
-              </div>
+                <div className="w-full flex flex-col items-start lg:items-center text-left lg:text-center mt-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                    The Apex Body for Robotics & Automation
+                  </h3>
+                  <p className="text-white/60 text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
+                    Empowering the ecosystem through Education, Standardization, and Industrial Innovation.
+                    Join the Community of 4500+ members, shaping the Robotics & Automation Industry 5.0.
+                  </p>
 
-              {/* Right Column (AICRA Branding + Area Grid) */}
-              <div className="lg:col-span-4 flex flex-col justify-center">
-                <div className="text-white font-extrabold text-lg tracking-wide flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xl text-[#FFB400]">
-                    🏛️
-                  </div>
-                  <div>
-                    <div className="text-xs text-white/50 uppercase tracking-widest font-bold">AICRA</div>
-                    <div className="text-white text-sm">EMPOWERING IDEAS</div>
+                  {/* AICRA Areas list */}
+                  <div className="flex flex-wrap justify-start lg:justify-center gap-4 text-center text-[11px] md:text-xs font-bold text-white/80 w-full">
+                    {[
+                      { icon: "🤖", label: "Robotics" },
+                      { icon: "💡", label: "Innovation" },
+                      { icon: "📚", label: "Education" },
+                      { icon: "🔬", label: "Research" },
+                      { icon: "⚙️", label: "Automation" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex flex-col items-center justify-center gap-3 w-[90px] h-[90px] md:w-[100px] md:h-[100px] rounded-2xl bg-white/5 border border-white/10 hover:border-[#FFB400]/50 hover:bg-white/10 transition-all duration-300">
+                        <span className="text-2xl md:text-3xl">{item.icon}</span>
+                        <span>{item.label}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-
-                {/* AICRA Areas list */}
-                <div className="grid grid-cols-3 gap-3 text-center text-[10px] font-bold text-white/80">
-                  <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-lg">🤖</span>
-                    <span>Robotics</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-lg">💡</span>
-                    <span>Innovation</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-lg">📚</span>
-                    <span>Education</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-lg">🔬</span>
-                    <span>Research</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-lg">⚙️</span>
-                    <span>Automation</span>
-                  </div>
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="mt-8 border-2 border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-[#050b14] font-bold text-xs py-2.5 px-6 rounded-xl flex items-center justify-center gap-2 group transition-all duration-300 w-full md:w-fit"
-                >
-                  <span>Know More About AICRA</span>
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                </Link>
               </div>
-
             </div>
           </div>
         </div>
@@ -397,117 +380,17 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── 6. Journey Timeline Section (Professional horizontal timeline) ── */}
-      <section id="journey" className="bg-[#050b14] py-20 text-white relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
-        <div className="max-w-[1440px] mx-auto px-5 lg:px-10 relative z-10">
-          
-          <h2 className="text-center text-3xl md:text-[40px] font-display font-extrabold text-white mb-16">
-            Our Journey
-          </h2>
-
-          <div className="relative">
-            {/* Stepper line */}
-            <div className="absolute top-[35px] left-[7%] right-[7%] h-[2px] bg-white/10 hidden lg:block" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-8 text-center">
-              
-              {/* Step 1 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2016</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  Started with a vision to inspire young minds.
-                </p>
-              </div>
-
-              {/* Step 2 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 20l-5.447-2.724A1 1 0 0113 16.382V5.618a1 1 0 011.447-.894L19 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L16 4m0 13V4m0 0L9 7" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2017</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  First Robotics Workshops Conducted.
-                </p>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2018</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  Expanded to Schools &amp; Colleges.
-                </p>
-              </div>
-
-              {/* Step 4 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-14v4m0 0l-8 4m8-4l8 4m-8 0v10m0 0l-8-4m0 0V7" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2019</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  Launched DIY Arduino Kits &amp; Programs.
-                </p>
-              </div>
-
-              {/* Step 5 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2021</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  Recognized as AICRA District Coordinator (DC).
-                </p>
-              </div>
-
-              {/* Step 6 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2023</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  10,000+ Students Trained Across Chennai.
-                </p>
-              </div>
-
-              {/* Step 7 */}
-              <div className="flex flex-col items-center">
-                <div className="w-[70px] h-[70px] rounded-full bg-white/5 border-2 border-white/10 flex items-center justify-center shadow-md mb-4 bg-[#050b14] text-white/80 hover:border-[#FFB400] transition-colors duration-300">
-                  <svg className="w-6 h-6 text-[#FFB400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-[#FFB400] text-sm mb-1">2024+</h4>
-                <p className="text-xs text-white/50 leading-relaxed max-w-[130px]">
-                  Continuing to build innovators for a better future.
-                </p>
-              </div>
-
-            </div>
+          {/* Added Image Section */}
+          <div className="mt-12 md:mt-16 w-full rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.1)] border border-slate-200/60 relative">
+            <Image
+              src="/about/about us picture.webp"
+              alt="MechEtron - Government-Recognized, Industry-Validated, Future-Ready"
+              width={1440}
+              height={800}
+              className="w-full h-auto object-contain md:object-cover"
+              sizes="100vw"
+            />
           </div>
         </div>
       </section>
@@ -516,7 +399,7 @@ export default function AboutPage() {
       <section id="founder" className="bg-white py-20">
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            
+
             {/* Founder Photo */}
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] max-w-[420px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
@@ -532,32 +415,38 @@ export default function AboutPage() {
 
             {/* Founder Bio */}
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <span className="text-[#10B981] text-xs font-bold uppercase tracking-wider mb-3">Leadership That Inspires</span>
+              <span className="text-[#10B981] text-xs font-bold uppercase tracking-wider mb-3">Meet Our Founder & Director</span>
               <h2 className="text-3xl md:text-[40px] font-display font-extrabold text-[#0F172A] leading-tight mb-3">
-                Meet Murali Arumuttu
+                Murali Arumuttu
               </h2>
               <p className="text-[#2563EB] text-sm md:text-base font-bold leading-relaxed mb-6">
-                AICRA District Coordinator | Founder &amp; Director – MechEtron | Industry &amp; Robotics Professional
+                Founder & Director — Mech-E-Tron (MET)
               </p>
 
-              <div className="space-y-4 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+              <div className="space-y-5 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+                <blockquote className="border-l-4 border-[#10B981] pl-4 italic font-semibold text-[#0F172A]">
+                  “My vision is to create an environment where every learner gets the opportunity to transform curiosity into knowledge, knowledge into skills, and skills into innovation.”
+                </blockquote>
                 <p>
-                  With 15+ years of industrial experience and expertise in robotics, automation, embedded systems, and STEM technology, Murali Arumuttu is dedicated to connecting industry knowledge with the next generation of innovators.
+                  Murali Arumuttu is an engineering professional, innovator and technology entrepreneur who founded Mech-E-Tron with a clear purpose—to make emerging technologies accessible, practical and inspiring for the next generation.
                 </p>
                 <p>
-                  As the Founder &amp; Director of MechEtron, he leads initiatives focused on practical robotics and technology education for students, schools, colleges, and aspiring engineers.
+                  His engineering and innovation-oriented background has shaped Mech-E-Tron's project-first approach to Robotics, STEM, AI, Automation, Embedded Systems, IoT and other emerging technologies. Public professional information also lists experience in product design engineering and studies in Industrial Design, Innovation and Entrepreneurship &amp; ROBOTICS IIT Delhi.
                 </p>
                 <p>
-                  As an AICRA District Coordinator, he works to create meaningful opportunities through technology, innovation, industry collaboration, and entrepreneurship.
+                  Through Mech-E-Tron, his mission is to bridge the gap between education and real-world engineering, empowering students to become confident builders, problem-solvers, innovators and future technology leaders.
                 </p>
-                <p className="font-semibold text-[#0F172A]">
-                  His mission is simple: transform curiosity into capability, and ideas into real-world innovation.
-                </p>
+                
+                <div className="pt-2">
+                  <p className="font-semibold text-[#0F172A] mb-1">His belief is simple:</p>
+                  <p className="text-[#FFB400] font-display font-extrabold text-lg md:text-xl uppercase tracking-wide">
+                    Learn. Build. Innovate. Lead.
+                  </p>
+                  <p className="text-[#10B981] font-bold text-base mt-1">
+                    Don't just learn technology. Build it.
+                  </p>
+                </div>
               </div>
-
-              <p className="mt-8 text-[#FFB400] font-display font-extrabold text-sm md:text-base tracking-wide uppercase">
-                Connect • Collaborate • Innovate
-              </p>
 
               <a
                 href={companyInfo.founder.linkedin}
@@ -678,9 +567,9 @@ export default function AboutPage() {
         <div className="max-w-[1440px] mx-auto px-5 lg:px-10">
           <div className="bg-[#050b14] rounded-[24px] overflow-hidden shadow-2xl border border-white/5 relative">
             <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 md:p-12 relative z-10">
-              
+
               {/* Left Student Image (lg:col-span-3) */}
               <div className="lg:col-span-3 relative aspect-[4/3] lg:aspect-square w-full rounded-xl overflow-hidden border border-white/5">
                 <Image

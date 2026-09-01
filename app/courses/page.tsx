@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import CoursesFilterList from "@/components/CoursesFilterList";
-import DownloadBrochureButton from "@/components/DownloadBrochureButton";
+import CoursesHero from "@/components/CoursesHero";
 
 export const metadata = {
   title: "Robotics & STEM Courses in Chennai, Hyderabad, Tirupati | Mech-E-Tron",
@@ -13,71 +12,7 @@ export const metadata = {
 export default function CoursesPage() {
   return (
     <main className="bg-white min-h-screen">
-      {/* ── Hero Section (Dark Theme) ── */}
-      <section className="relative bg-[#050b14] overflow-hidden py-16 lg:py-24 text-white">
-        {/* Decorative Grid and Orbs */}
-        <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
-        <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] rounded-full bg-brand-blue/10 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-1/10 left-10 w-[300px] h-[300px] rounded-full bg-[#8B5CF6]/5 blur-[100px] pointer-events-none" />
-
-        <div className="container-x relative max-w-content mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 flex flex-col items-start animate-fade-in">
-              {/* Breadcrumb Navigation */}
-              <nav className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/45 mb-6" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-brand-accent transition-colors">Home</Link>
-                <span className="text-white/20">&gt;</span>
-                <span className="text-white/70">Courses</span>
-              </nav>
-
-              {/* Title & Accent */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-display font-extrabold text-white leading-tight">
-                Explore Our <span className="text-[#FFB400]">Courses</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="mt-4 text-sm sm:text-base md:text-lg text-white/60 leading-relaxed max-w-xl font-medium">
-                From School Robotics to Advanced Engineering Programs, we have the perfect course for every learner.
-              </p>
-
-              {/* Action Buttons Row */}
-              <div className="mt-8 flex flex-wrap gap-4 w-full sm:w-auto">
-                {/* Book Free Demo Button (Solid Yellow Filled) */}
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-[#FFB400] text-[#050b14] text-sm font-extrabold hover:bg-[#FFA500] hover:-translate-y-0.5 active:translate-y-0 shadow-[0_4px_14px_rgba(255,180,0,0.35)] hover:shadow-[0_6px_20px_rgba(255,180,0,0.5)] transition-all duration-300 w-full sm:w-auto text-center"
-                >
-                  <svg className="w-5 h-5 text-[#050b14]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                  <span>Book Free Demo Class</span>
-                </Link>
-
-                {/* Download Brochure Button (Gold Outline) */}
-                <DownloadBrochureButton />
-              </div>
-            </div>
-
-            {/* Right Image Column */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end animate-fade-in">
-              <div className="relative w-full max-w-[440px] aspect-[1.3] lg:aspect-[1.25] overflow-hidden rounded-2xl border border-white/5 shadow-2xl">
-                <Image
-                  src="/images/hero-student.png"
-                  alt="Student building tracked robotics vehicle"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 440px"
-                  className="object-cover object-center scale-102"
-                />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <CoursesHero />
 
       {/* Wrapper with light grey background for categories tabs and card grid */}
       <div className="bg-[#f6f7fb] pt-1">

@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
 
   const fileBuffer = fs.readFileSync(filePath);
 
-  return new NextResponse(fileBuffer, {
+  return new NextResponse(new Uint8Array(fileBuffer), {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": 'attachment; filename="ISL_School_Proposal.pdf"',

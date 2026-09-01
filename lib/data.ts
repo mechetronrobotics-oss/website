@@ -323,8 +323,8 @@ export const stats = [
 /* ── Company Info ──────────────────────────────────────── */
 export const companyInfo = {
   name: "MECH-ε-TRON™",
-  logoNavbar: "/images/navbar_logo.jpeg",
-  logoFooter: "/images/logo_footer.png",
+  logoNavbar: "/images/navbar_logo.png",
+  logoFooter: "/images/navbar_logo_2.png",
   tagline: "Build Skills, Not Just Theory.",
   email: "info@mechetron.com",
   phone: "+91 81484 35246",
@@ -374,10 +374,24 @@ export const companyInfo = {
 
 export const navLinks: { href: string; label: string; children?: { href: string; label: string }[] }[] = [
   { href: "/", label: "Home" },
-  { href: "/courses", label: "Courses" },
+  { href: "/courses", label: "S.T.E.M Courses" },
   { href: "/summer-camp", label: "Workshop & Campus" },
-  { href: "/about", label: "About Us" },
   { href: "/verify-certificate", label: "Verify Certificate" },
+  {
+    href: "/engineer-services",
+    label: "Engineer Services",
+    children: [
+      { href: "/engineer-services/mechanical-cad", label: "Mechanical CAD" },
+      { href: "/engineer-services/civil-cad", label: "Civil CAD" },
+      { href: "/engineer-services/architectural-cad", label: "Architectural CAD" },
+      { href: "/engineer-services/interior-design", label: "Interior Design" },
+      { href: "/engineer-services/electrical-cad", label: "Electrical CAD (ETAP)" },
+      { href: "/engineer-services/3d-printing", label: "3D Printing" },
+      { href: "/engineer-services/blow-mould", label: "Top 5 Expert Blow Mould Manufacturing" },
+      { href: "/engineer-services/injection-mould", label: "Injection Mould Manufacturing" },
+    ]
+  },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
 ];
 

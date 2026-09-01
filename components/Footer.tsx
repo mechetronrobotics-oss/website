@@ -80,6 +80,9 @@ export default function Footer() {
               <Link href="/about" className="hover:text-brand-blue transition-colors">About Us</Link>
             </li>
             <li>
+              <Link href="/engineer-services" className="hover:text-brand-blue transition-colors">Engineer Services</Link>
+            </li>
+            <li>
               <Link href="/verify-certificate" className="hover:text-brand-blue transition-colors">Verify Certificate</Link>
             </li>
             <li>
