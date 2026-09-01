@@ -91,7 +91,7 @@ export default function AboutPage() {
               src="/images/Picture1.png"
               alt="Students in robotics classroom environment"
               fill
-              sizes="(max-width: 1024px) 100vw, 120vw"
+              sizes="(max-width: 1024px) 100vw, 40vw"
               priority
               className="object-cover rounded-xl"
             />
@@ -501,7 +501,7 @@ export default function AboutPage() {
             <div className="flex flex-col items-center justify-between bg-slate-50 p-5 rounded-2xl border border-slate-100/60 hover:bg-slate-100/40 hover:-translate-y-0.5 transition-all duration-300 w-[180px] h-[110px] shadow-sm">
               <div className="relative w-full h-[45px] flex items-center justify-center">
                 <Image
-                  src="/logos/skill-india.webp"
+                  src="/images/Picture2.png"
                   alt="Skill India Logo"
                   width={80}
                   height={40}
